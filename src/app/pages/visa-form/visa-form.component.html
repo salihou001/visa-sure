@@ -1,8 +1,50 @@
 <div class="super-contain bg-[#e8edf0]">
     <app-nav-bar></app-nav-bar>
 
-    <div class="form h-[800px] w-full">
+    <div class="form w-full mb-20">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-[#538676] text-[50px] leading-[60px] font-[700]">Formulaire de e-visa</h1>
+            <h1 class="text-[#538676] text-[50px] leading-[60px] font-[400]">Veuillez choisir le type de visa sollicité</h1>
 
+            <!--  -->
+            <div class="grid grid-cols-3 gap-8 h-[300px] mt-[50px]">
+                @for (item of listVisa; track $index) { <app-visa-prise [item]="item"></app-visa-prise> }
+            </div>
+            <!--  -->
+
+            <!--  -->
+            <div class="flex items-center gap-4">
+                <div class="border">
+                    <img class="h-[500px]" src="Image.svg" alt="image" /> 
+                </div>
+                <div class="border w-[800px] h-[500px] bg-[#F1F5EB]">
+                    <div class="row h-full w-full">
+                        <div class="h-[80%]">
+                            <div class="min-h-full min-w-full">
+                                <h1 class="text-[#538676] text-[50px] leading-[60px] font-[700]">Formulaire de e-visa</h1>
+                                <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
+                                    <div class="border rounded-lg overflow-hidden">
+                                        <input class="w-full outline-none border-none pl-3 py-2" type="text">
+                                    </div>
+                                    <div class="border rounded-lg">
+                                        <select class="w-full outline-none border-none bg-transparen pl-2 py-2" name="se" id="">
+                                            <option value="1">1</option>
+                                            <option value="1">1</option>
+                                            <option value="1">1</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="min-h-full min-w-full"></div>
+                        </div>
+                        <div class="h-[20%] border">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  -->
+        </div>
     </div>
 
     <app-footer></app-footer>
