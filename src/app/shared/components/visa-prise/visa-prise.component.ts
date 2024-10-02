@@ -10,7 +10,7 @@ import { VisaServicePlanService } from '../../services/visa-service-plan.service
   styleUrl: './visa-prise.component.scss'
 })
 export class VisaPriseComponent {
-  visaPlan = inject(VisaServicePlanService);
+  visaPlanSrv = inject(VisaServicePlanService);
   item = input.required<VisaPrise>();
-  setVisaPlan() { this.visaPlan.currentPlan = this.item() }
+  setVisaPlan() { this.visaPlanSrv.currentPlan = this.item() }
 }

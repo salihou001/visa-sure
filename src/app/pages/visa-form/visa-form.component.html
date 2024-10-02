@@ -69,26 +69,6 @@
                                             <label for="reason">photo du passport  ( photo de la premiere de couverture)</label>
                                             <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
                                         </div>
-                                        <div class="">
-                                        </div>
-                                        <div class="">
-                                            <label for="reason">carnet de vaccination  contre la fievre jaune</label>
-                                            <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
-                                        </div>
-                                        <div class="">
-                                        </div>
-                                        <div class="">
-                                            <label for="reason">photo du passport  ( photo de la premiere de couverture)</label>
-                                            <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
-                                        </div>
-                                        <div class="">
-                                        </div>
-                                        <div class="">
-                                            <label for="reason">carnet de vaccination  contre la fievre jaune</label>
-                                            <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
-                                        </div>
-                                        <div class="">
-                                        </div>
                                     </div>
                                 }
                             </div>
@@ -102,7 +82,7 @@
                                 } @else {
                                     <div class="flex items-center gap-4">
                                         <div class="py-2 px-4 rounded-[100px] cursor-pointer bg-slate-500 text-white" (click)="pevuisStep()">Précedent</div>
-                                        <div class="py-2 px-4 rounded-[100px] cursor-pointer bg-slate-500 text-white" (click)="nextStep()">Payer ({{visaPlan.currentPlan.price}})</div>
+                                        <div class="py-2 px-4 rounded-[100px] cursor-pointer bg-slate-500 text-white" (click)="nextStep()">Payer ({{visaPlan.currentPlan?.price}})</div>
                                     </div>
                                 }
                             </div>
