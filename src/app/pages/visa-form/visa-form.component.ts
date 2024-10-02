@@ -1,9 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FooterComponent } from "../../shared/components/footer/footer.component";
 import { NavBarComponent } from "../../shared/components/nav-bar/nav-bar.component";
 import { VisaPrise } from '../../shared/models/visa-prise.model';
 import { VisaPriseComponent } from "../../shared/components/visa-prise/visa-prise.component";
 import gsap from 'gsap';
+import { VisaServicePlanService } from '../../shared/services/visa-service-plan.service';
 
 @Component({
   selector: 'app-visa-form',
@@ -35,6 +36,8 @@ export class VisaFormComponent {
   ]
   compteur = signal(1)
   compteurRadio = signal(1)
+
+  visaPlan = inject(VisaServicePlanService);
 
   nextStep() {
     gsap.to(".row-form", {
