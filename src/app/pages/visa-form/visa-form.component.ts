@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FooterComponent } from "../../shared/components/footer/footer.component";
 import { NavBarComponent } from "../../shared/components/nav-bar/nav-bar.component";
 import { VisaPrise } from '../../shared/models/visa-prise.model';
 import { VisaPriseComponent } from "../../shared/components/visa-prise/visa-prise.component";
+import gsap from 'gsap';
 
 @Component({
   selector: 'app-visa-form',
@@ -32,4 +33,30 @@ export class VisaFormComponent {
       desc: 'Séjour maximun de 180 joursDurée de validité de 6 moisMultiple entrée'
     },
   ]
+  compteur = signal(1)
+  compteurRadio = signal(1)
+
+  nextStep() {
+    gsap.to(".row-form", {
+      xPercent: -100, 
+      duration: .5, 
+    })
+    this.compteur.set(2)
+  }
+  pevuisStep() {
+    gsap.to(".row-form", {
+      xPercent: 0, 
+      duration: .5, 
+    })
+    this.compteur.set(1);
+  }
+
+  checkIfUserIsMinor(e: any) {
+    if(this.compteurRadio() === 1){
+      this.compteurRadio.set(2);
+    }else{
+      e.target.checked = false;
+      this.compteurRadio.set(1);
+    }
+  }
 }

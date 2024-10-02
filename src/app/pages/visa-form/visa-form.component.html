@@ -1,4 +1,4 @@
-<div class="super-contain bg-[#e8edf0]">
+<div class="super-contain bg-white">
     <app-nav-bar></app-nav-bar>
 
     <div class="form w-full mb-20">
@@ -14,31 +14,98 @@
 
             <!--  -->
             <div class="flex items-center gap-4">
-                <div class="border">
+                <div class="">
                     <img class="h-[500px]" src="Image.svg" alt="image" /> 
                 </div>
-                <div class="border w-[800px] h-[500px] bg-[#F1F5EB]">
-                    <div class="row h-full w-full">
-                        <div class="h-[80%]">
+                <div class="border w-[800px] h-auto bg-[#F1F5EB] rounded-md overflow-hidden">
+                    <div class=" h-full w-full">
+                        <div class="row-form h-[85%] flex items-center">
                             <div class="min-h-full min-w-full">
-                                <h1 class="text-[#538676] text-[50px] leading-[60px] font-[700]">Formulaire de e-visa</h1>
+                                <h1 class="text-[#538676] text-[50px] leading-[60px] font-[700] text-center py-2">Formulaire de e-visa</h1>
                                 <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
-                                    <div class="border rounded-lg overflow-hidden">
-                                        <input class="w-full outline-none border-none pl-3 py-2" type="text">
+                                    <div class="overflow-hidden">
+                                        <label for="reason">raison du voyage</label>
+                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
                                     </div>
-                                    <div class="border rounded-lg">
-                                        <select class="w-full outline-none border-none bg-transparen pl-2 py-2" name="se" id="">
-                                            <option value="1">1</option>
-                                            <option value="1">1</option>
-                                            <option value="1">1</option>
-                                        </select>
+                                    <div class="overflow-hidden">
+                                        <label for="reason">date du voyage</label>
+                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <label for="reason">choix du visa</label>
+                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <label for="reason">email du vayageur</label>
+                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
+                                    </div>
+                                </div>
+                                <h1 class="text-[#538676] text-[40px] leading-[50px] font-[600] text-center py-2">Ajouter le voyageur</h1>
+                                <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
+                                    <div class="overflow-hidden">
+                                        <label for="reason">nom</label>
+                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <label for="reason">Prenom</label>
+                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
+                                    </div>
+                                    <div class="overflow-hidden">
+                                        <label for="reason">date d’expiration du passport  (>= a 6mois a la date du jour)</label>
+                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
                                     </div>
                                 </div>
                             </div>
-                            <div class="min-h-full min-w-full"></div>
+                            <div class="min-h-full min-w-full self-start">
+                                <h1 class="text-[#538676] text-[50px] leading-[60px] font-[700] text-center py-2">Champs obligatoires</h1>
+
+                                <div class="flex items-center gap-4 pl-5">
+                                    <div class="font-[700]">Etes-vous mineur ?</div>
+                                    <div><input type="radio" name="" id="" (click)="checkIfUserIsMinor($event)"></div>
+                                </div>
+                                @if (this.compteurRadio() === 2) {
+                                    <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
+                                        <div class="">
+                                            <label for="reason">photo du passport  ( photo de la premiere de couverture)</label>
+                                            <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
+                                        </div>
+                                        <div class="">
+                                        </div>
+                                        <div class="">
+                                            <label for="reason">carnet de vaccination  contre la fievre jaune</label>
+                                            <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
+                                        </div>
+                                        <div class="">
+                                        </div>
+                                        <div class="">
+                                            <label for="reason">photo du passport  ( photo de la premiere de couverture)</label>
+                                            <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
+                                        </div>
+                                        <div class="">
+                                        </div>
+                                        <div class="">
+                                            <label for="reason">carnet de vaccination  contre la fievre jaune</label>
+                                            <input class="border rounded-lg w-full outline-none border-none pl-3 py-2" type="text">
+                                        </div>
+                                        <div class="">
+                                        </div>
+                                    </div>
+                                }
+                            </div>
                         </div>
-                        <div class="h-[20%] border">
-                            
+                        <div class="h-[15%] border">
+                            <div class="flex items-center gap-4 justify-center h-full py-2">
+                                @if (this.compteur() === 1) { 
+                                    <div>
+                                        <div class="py-2 px-4 rounded-[100px] cursor-pointer bg-slate-500 text-white" (click)="nextStep()">Suivant</div>
+                                    </div>
+                                } @else {
+                                    <div class="flex items-center gap-4">
+                                        <div class="py-2 px-4 rounded-[100px] cursor-pointer bg-slate-500 text-white" (click)="pevuisStep()">Précedent</div>
+                                        <div class="py-2 px-4 rounded-[100px] cursor-pointer bg-slate-500 text-white" (click)="nextStep()">Payer</div>
+                                    </div>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
