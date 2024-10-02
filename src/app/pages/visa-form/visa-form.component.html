@@ -21,7 +21,7 @@
                     <div class=" h-full w-full">
                         <div class="row-form h-[85%] flex items-center">
                             <div class="min-h-full min-w-full">
-                                <h1 class="text-[#538676] text-[50px] leading-[60px] font-[700] text-center py-2">{{visaPlan.currentPlan?.label || 'E-visa de Court sejour'}}</h1>
+                                <h1 class="text-[#538676] text-[50px] leading-[60px] font-[700] text-center py-2">{{visaPlan.currentPlan.label || 'E-visa de Court sejour'}}</h1>
                                 <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
                                     <div class="overflow-hidden">
                                         <label for="reason">raison du voyage</label>
@@ -82,7 +82,7 @@
                                 } @else {
                                     <div class="flex items-center gap-4">
                                         <div class="py-2 px-4 rounded-[100px] cursor-pointer bg-slate-500 text-white" (click)="pevuisStep()">Précedent</div>
-                                        <div class="py-2 px-4 rounded-[100px] cursor-pointer bg-slate-500 text-white" (click)="nextStep()">Payer ({{visaPlan.currentPlan?.price}})</div>
+                                        <div class="py-2 px-4 rounded-[100px] cursor-pointer bg-slate-500 text-white" (click)="nextStep()">Payer ({{visaPlan.currentPlan.price}})</div>
                                     </div>
                                 }
                             </div>
