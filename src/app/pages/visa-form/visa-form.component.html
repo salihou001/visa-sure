@@ -1,135 +1,152 @@
 <div class="super-contain bg-white">
-    <app-nav-bar></app-nav-bar>
+  <app-nav-bar></app-nav-bar>
 
-    <div class="form w-full mb-20">
-        <div class="max-w-7xl mx-auto">
-            <h1 class="text-[#3d997c] text-[50px] leading-[60px] font-[700]">Formulaire de e-visa</h1>
-            <h1 class="text-[#141414] text-[40px] leading-[60px] font-[500]">Veuillez choisir le type de visa sollicité
-            </h1>
+  <div class="form w-full mb-20">
+      <div class="max-w-7xl mx-auto">
+          <h1 class="text-[#3d997c] text-[50px] leading-[60px] font-[700]">Formulaire de e-visa</h1>
+          <h1 class="text-[#141414] text-[40px] leading-[60px] font-[500]">Veuillez choisir le type de visa sollicité
+          </h1>
 
-            <!--  -->
-            <div class="grid grid-cols-3 gap-8 h-[300px] mt-[50px]">
-                @for (item of listVisa; track $index) { <app-visa-prise [item]="item"></app-visa-prise> }
-            </div>
-            <!--  -->
+          <!--  -->
+          <div class="grid grid-cols-3 gap-8 h-[300px] mt-[50px]">
+              @for (item of listVisa; track $index) { <app-visa-prise [item]="item"></app-visa-prise> }
+          </div>
+          <!--  -->
 
-            <!--  -->
-            <div class="flex items-center gap-4">
-                <div class="">
-                    <img class="h-[500px]" src="Image.svg" alt="image" />
-                </div>
-                <div class="border w-[800px] h-auto bg-[#F1F5EB] rounded-md overflow-hidden">
-                    <div class=" h-full w-full">
-                        <div class="row-form h-[85%] flex items-center">
-                            <div class="min-h-full min-w-full">
-                                <h1 class="text-[#3d997c] text-[40px] leading-[60px] font-[500] text-center py-2">
-                                    {{visaPlan.currentPlan.label || 'E-visa de Court sejour'}}</h1>
-                                <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
-                                    <div class="overflow-hidden">
-                                        <label for="reason" class="text-[#141414]">raison du voyage</label>
-                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
-                                            type="text">
+          <!--  -->
+          <div class="flex items-center gap-4">
+              <div class="">
+                  <img class="h-[500px]" src="Image.svg" alt="image" />
+              </div>
+
+              <div class="border w-[800px] h-auto bg-[#F1F5EB] rounded-md overflow-hidden">
+
+                  <div class=" h-full w-full">
+                      <div class="row-form h-[85%] flex items-center">
+                          <div class="min-h-full min-w-full">
+                              <h1 class="text-[#3d997c] text-[40px] leading-[60px] font-[500] text-center py-2">
+                                  {{visaPlan.currentPlan.label || 'E-visa de Court sejour'}}</h1>
+
+                              <div class="grid grid-cols-2 gap-4  h-full w-full p-4">
+                                  <div class="overflow-hidden">
+                                    <div class="form-control">
+                                      <label class="label text-gray-600" for="reason">Raison du voyage</label>
+                                      <select class="select select-ghost input-success w-full max-w-xs bg-white">
+                                        <option>Raison du voyage</option>
+                                        <option>travail</option>
+                                        <option>etude</option>
+                                        <option>tourisme</option>
+                                        <option>visite familial</option>
+                                      </select>
                                     </div>
-                                    <div class="overflow-hidden">
-                                        <label for="reason">date du voyage</label>
-                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
-                                            type="text">
+                                  </div>
+                                  <div class="overflow-hidden">
+                                    <div class="form-control">
+                                      <label class="label text-gray-600" for="reason">date du voyage</label>
+                                      <input class="input input-bordered input-success bg-gray-300 text-gray-900" type="date" placeholder="Entrez la raison">
                                     </div>
+                                  </div>
 
-                                    <div class="overflow-hidden">
-                                        <label for="reason">email du vayageur</label>
-                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
-                                            type="text">
+                                  <div class="overflow-hidden">
+                                    <div class="form-control">
+                                      <label class="label text-gray-600" for="reason">email</label>
+                                      <input class="input input-bordered input-success bg-white text-gray-900" type="email" placeholder="Entrez l'email du voyageur">
                                     </div>
+                                  </div>
+                              </div>
+                              <h1 class="text-[#3d997c] text-[30px] leading-[50px] font-[500] text-center py-2">
+                                  Ajouter le voyageur</h1>
+                              <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
+                                <div class="form-control">
+                                  <label class="label text-gray-600" for="reason">nom</label>
+                                  <input class="input input-bordered input-success bg-white text-gray-900" type="text" placeholder="Entrez votre nom">
                                 </div>
-                                <h1 class="text-[#3d997c] text-[30px] leading-[50px] font-[500] text-center py-2">
-                                    Ajouter le voyageur</h1>
-                                <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
-                                    <div class="overflow-hidden">
-                                        <label for="reason">nom</label>
-                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
-                                            type="text">
-                                    </div>
-                                    <div class="overflow-hidden">
-                                        <label for="reason">Prenom</label>
-                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
-                                            type="text">
-                                    </div>
-                                    <div class="overflow-hidden">
-                                        <label for="reason">date d’expiration du passport (>= a 6mois a la date du
-                                            jour)</label>
-                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
-                                            type="text">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="min-h-full min-w-full self-start">
-                                <h1 class="text-[#3d997c] text-[40px] leading-[40px] font-[500] text-center py-4">documents
-                                    obligatoires</h1>
-
-                                <div class="flex items-center gap-4 pl-5">
-                                    <div class="font-[700]">Etes-vous mineur ?</div>
-                                    <div><input type="radio" name="" id="" (click)="checkIfUserIsMinor($event)"></div>
+                                <div class="form-control">
+                                  <label class="label text-gray-600" for="reason">prenom</label>
+                                  <input class="input input-bordered input-success bg-white text-gray-900" type="text" placeholder="Entrez votre prenom">
                                 </div>
 
-                                <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
-                                    @if (this.compteurRadio() === 2) {
-                                    <div class="">
-                                        <label for="reason">photo de autorisation parental</label>
-                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
-                                            type="text">
-                                    </div>
-                                    <div class="">
-                                    </div>
-                                    }
-                                    <div class="">
-                                        <label for="reason">photo du passport ( photo de la premiere decouverture)</label>
-                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
-                                            type="text">
-                                    </div>
-                                    <div class="">
-                                    </div>
-                                    <div class="">
-                                        <label for="reason">carnet de vaccination contre la fievre jaune</label>
-                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
-                                            type="text">
-                                    </div>
-                                    <div class="">
-                                    </div>
-                                    <div class="">
-                                        <label for="reason">photo du passport ( photo de la premiere de
-                                            couverture)</label>
-                                        <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
-                                            type="text">
-                                    </div>
-                                    <div class="">
-                                    </div>
+                                <div class="form-control">
+                                  <label class="label text-[red]" for="reason">NB:date d’expiration du passport (>= a 6mois a la date du jour)</label>
+                                  <input class="input input-bordered input-success bg-gray-300 text-gray-900" type="date" placeholder="Entrez votre prenom">
                                 </div>
-                            </div>
-                        </div>
-                        <div class="h-[15%] border">
-                            <div class="flex items-center gap-4 justify-center h-full py-4">
-                                @if (this.compteur() === 1) {
-                                <div>
-                                    <div class="py-2 px-4 rounded-[80px] h-[45px] flex items-center justify-center cursor-pointer bg-[#3d997c] text-white"
-                                        (click)="nextStep()">Suivant</div>
-                                </div>
-                                } @else {
-                                <div class="flex items-center gap-4">
-                                    <div class="py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer bg-[#3d997c] text-white"
-                                        (click)="pevuisStep()">Précedent</div>
-                                    <div class="py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer bg-[#3d997c] text-white"
-                                        (click)="nextStep()">Payer ({{visaPlan.currentPlan.price}})</div>
-                                </div>
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!--  -->
-        </div>
-    </div>
+                              </div>
+                          </div>
+                          <div class="min-h-full min-w-full self-start">
+                              <h1 class="text-[#3d997c] text-[40px] leading-[40px] font-[500] text-center py-4">documents
+                                  obligatoires</h1>
 
-    <app-footer></app-footer>
+                              <div class="flex items-center gap-4 pl-5">
+                                  <div class="font-[700] text-black">Etes-vous mineur ?</div>
+                                  <div><input type="radio" name="" id="" (click)="checkIfUserIsMinor($event)"></div>
+                              </div>
+
+                              <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
+                                  @if (this.compteurRadio() === 2) {
+                                    <div class="form-control">
+                                      <label class="label text-gray-600" for="passport-photo">photo de autorisation parental</label>
+                                      <input class="input input-bordered input-success bg-white text-gray-900" type="file">
+                                    </div>
+                                  <div class="">
+                                  </div>
+                                  }
+                                  <div class="form-control">
+                                    <label class="label text-gray-600" for="passport-photo">photo du passport ( photo de la premiere decouverture)</label>
+                                    <input class="input input-bordered input-success bg-white text-gray-900" type="file">
+                                  </div>
+                                  <div class="">
+                                  </div>
+                                  <div class="form-control">
+                                    <label class="label text-gray-600" for="passport-photo">photo du carnet de vaccination contre la fievre jaune</label>
+                                    <input class="input input-bordered input-success bg-white text-gray-900" type="file">
+                                  </div>
+                                  <div class="">
+                                  </div>
+                                  <div class="form-control">
+                                    <label class="label text-gray-600" for="passport-photo">photo du billet d'avion</label>
+                                    <input class="input input-bordered input-success bg-white text-gray-900" type="file">
+                                  </div>
+                                  <div class="">
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="h-[15%] border">
+                          <div class="flex items-center gap-4 justify-center h-full py-4">
+                              @if (this.compteur() === 1) {
+                              <div>
+                                  <div class="py-2 px-4 rounded-[80px] h-[45px] flex items-center justify-center cursor-pointer btn-wide bg-[#3d997c] text-white"
+                                      (click)="nextStep()">Suivant</div>
+                              </div>
+                              } @else {
+                              <div class="flex items-center gap-4">
+                                  <div class="py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer btn-wide bg-[#3d997c] text-white"
+                                      (click)="prevStep()">Précedent</div>
+                                  <div class=" py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer btn-wide bg-[#3d997c] text-white"
+                                      (click)="nextStep() "  onclick="my_modal_1.showModal()">Payer ({{visaPlan.currentPlan.price}})</div>
+                                      <dialog id="my_modal_1" class="modal">
+                                        <div class="modal-box">
+                                          <h3 class="text-lg font-bold">paiement pour evisa  {{visaPlan.currentPlan.label || 'E-visa de Court sejour'}} </h3>
+                                          <p class="py-4">paiement en cour de ({{visaPlan.currentPlan.price}}) </p>
+                                          <span class="loading loading-bars loading-lg"></span>
+                                          <div class="modal-action">
+                                            <form method="dialog">
+                                              <!-- if there is a button in form, it will close the modal -->
+                                              <button class="btn">fermer</button>
+                                            </form>
+                                          </div>
+                                        </div>
+                                      </dialog>
+                              </div>
+                              }
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!--  -->
+      </div>
+  </div>
+
+  <app-footer></app-footer>
 </div>

@@ -14,6 +14,8 @@ import { VisaServicePlanService } from '../../shared/services/visa-service-plan.
   styleUrl: './visa-form.component.scss'
 })
 export class VisaFormComponent {
+  uploadedFiles: Array<{ name: string }> = [];
+
   listVisa: VisaPrise[] = [
     {
       id: 1,
@@ -46,13 +48,15 @@ export class VisaFormComponent {
     })
     this.compteur.set(2)
   }
-  pevuisStep() {
+  prevStep() {
     gsap.to(".row-form", {
       xPercent: 0,
       duration: .5,
     })
     this.compteur.set(1);
   }
+
+
 
   checkIfUserIsMinor(e: any) {
     if(this.compteurRadio() === 1){
