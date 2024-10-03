@@ -17,21 +17,21 @@ export class VisaFormComponent {
   listVisa: VisaPrise[] = [
     {
       id: 1,
-      label: 'E-visa de Court sejour', 
-      price: '233 €', 
-      desc: 'Séjour maximun de 180 joursDurée de validité de 6 moisMultiple entrée'
+      label: 'E-visa de Court sejour',
+      price: '233 €',
+      desc: 'Séjour maximun de 180 joursDurée de validité de 6 moisMultiple entrée \n Durée de traitement(4 jours)'
     },
     {
       id: 2,
-      label: 'E-visa  Express', 
-      price: '345 €', 
-      desc: 'Séjour maximun de 180 joursDurée de validité de 6 moisMultiple entrée'
+      label: 'E-visa  Express',
+      price: '345 €',
+      desc: 'Séjour maximun de 180 joursDurée de validité de 6 moisMultiple entrée \n Durée de traitement(2 jours)'
     },
     {
       id: 3,
-      label: 'E-visa de  long sejour', 
-      price: '406 €', 
-      desc: 'Séjour maximun de 180 joursDurée de validité de 6 moisMultiple entrée'
+      label: 'E-visa de  long sejour',
+      price: '406 €',
+      desc: 'Séjour maximun de 180 joursDurée de validité de 6 moisMultiple entrée \n Durée de traitement(4 jours)'
     },
   ]
   compteur = signal(1)
@@ -41,15 +41,15 @@ export class VisaFormComponent {
 
   nextStep() {
     gsap.to(".row-form", {
-      xPercent: -100, 
-      duration: .5, 
+      xPercent: -100,
+      duration: .5,
     })
     this.compteur.set(2)
   }
   pevuisStep() {
     gsap.to(".row-form", {
-      xPercent: 0, 
-      duration: .5, 
+      xPercent: 0,
+      duration: .5,
     })
     this.compteur.set(1);
   }

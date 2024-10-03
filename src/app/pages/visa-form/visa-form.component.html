@@ -3,8 +3,8 @@
 
     <div class="form w-full mb-20">
         <div class="max-w-7xl mx-auto">
-            <h1 class="text-[#538676] text-[50px] leading-[60px] font-[700]">Formulaire de e-visa</h1>
-            <h1 class="text-[#538676] text-[50px] leading-[60px] font-[400]">Veuillez choisir le type de visa sollicité
+            <h1 class="text-[#3d997c] text-[50px] leading-[60px] font-[700]">Formulaire de e-visa</h1>
+            <h1 class="text-[#141414] text-[40px] leading-[60px] font-[500]">Veuillez choisir le type de visa sollicité
             </h1>
 
             <!--  -->
@@ -22,11 +22,11 @@
                     <div class=" h-full w-full">
                         <div class="row-form h-[85%] flex items-center">
                             <div class="min-h-full min-w-full">
-                                <h1 class="text-[#538676] text-[50px] leading-[60px] font-[700] text-center py-2">
+                                <h1 class="text-[#3d997c] text-[40px] leading-[60px] font-[500] text-center py-2">
                                     {{visaPlan.currentPlan.label || 'E-visa de Court sejour'}}</h1>
                                 <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
                                     <div class="overflow-hidden">
-                                        <label for="reason">raison du voyage</label>
+                                        <label for="reason" class="text-[#141414]">raison du voyage</label>
                                         <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
                                             type="text">
                                     </div>
@@ -46,7 +46,7 @@
                                             type="text">
                                     </div>
                                 </div>
-                                <h1 class="text-[#538676] text-[40px] leading-[50px] font-[600] text-center py-2">
+                                <h1 class="text-[#3d997c] text-[40px] leading-[50px] font-[600] text-center py-2">
                                     Ajouter le voyageur</h1>
                                 <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
                                     <div class="overflow-hidden">
@@ -68,7 +68,7 @@
                                 </div>
                             </div>
                             <div class="min-h-full min-w-full self-start">
-                                <h1 class="text-[#538676] text-[50px] leading-[60px] font-[700] text-center py-2">Champs
+                                <h1 class="text-[#3d997c] text-[40px] leading-[40px] font-[500] text-center py-4">documents
                                     obligatoires</h1>
 
                                 <div class="flex items-center gap-4 pl-5">
@@ -87,8 +87,7 @@
                                     </div>
                                     }
                                     <div class="">
-                                        <label for="reason">photo du passport ( photo de la premiere de
-                                            couverture)</label>
+                                        <label for="reason">photo du passport ( photo de la premiere decouverture)</label>
                                         <input class="border rounded-lg w-full outline-none border-none pl-3 py-2"
                                             type="text">
                                     </div>
@@ -116,14 +115,14 @@
                             <div class="flex items-center gap-4 justify-center h-full py-4">
                                 @if (this.compteur() === 1) {
                                 <div>
-                                    <div class="py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer bg-slate-500 text-white"
+                                    <div class="py-2 px-4 rounded-[80px] h-[45px] flex items-center justify-center cursor-pointer bg-[#3d997c] text-white"
                                         (click)="nextStep()">Suivant</div>
                                 </div>
                                 } @else {
                                 <div class="flex items-center gap-4">
-                                    <div class="py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer bg-slate-500 text-white"
+                                    <div class="py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer bg-[#3d997c] text-white"
                                         (click)="pevuisStep()">Précedent</div>
-                                    <div class="py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer bg-slate-500 text-white"
+                                    <div class="py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer bg-[#3d997c] text-white"
                                         (click)="nextStep()">Payer ({{visaPlan.currentPlan.price}})</div>
                                 </div>
                                 }
