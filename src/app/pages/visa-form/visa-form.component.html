@@ -3,8 +3,8 @@
 
   <div class="form w-full mb-20">
       <div class="max-w-7xl mx-auto">
-          <h1 class="text-[#3d997c] text-[50px] leading-[60px] font-[700]">Formulaire de e-visa</h1>
-          <h1 class="text-[#141414] text-[40px] leading-[60px] font-[500]">Veuillez choisir le type de visa sollicité
+          <h1 class="text-[#00647b] text-[50px] leading-[60px] font-[700]">Formulaire de e-visa</h1>
+          <h1 class="text-[#727272] text-[40px] leading-[60px] font-[500]">Veuillez choisir le type de visa sollicité
           </h1>
 
           <!--  -->
@@ -24,7 +24,7 @@
                   <div class=" h-full w-full">
                       <div class="row-form h-[85%] flex items-center">
                           <div class="min-h-full min-w-full">
-                              <h1 class="text-[#3d997c] text-[40px] leading-[60px] font-[500] text-center py-2">
+                              <h1 class="text-[#00647b] text-[40px] leading-[60px] font-[500] text-center py-2">
                                   {{visaPlan.currentPlan.label || 'E-visa de Court sejour'}}</h1>
 
                               <div class="grid grid-cols-2 gap-4  h-full w-full p-4">
@@ -54,7 +54,7 @@
                                     </div>
                                   </div>
                               </div>
-                              <h1 class="text-[#3d997c] text-[30px] leading-[50px] font-[500] text-center py-2">
+                              <h1 class="text-[#00647b] text-[30px] leading-[50px] font-[500] text-center py-2">
                                   Ajouter le voyageur</h1>
                               <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
                                 <div class="form-control">
@@ -73,7 +73,7 @@
                               </div>
                           </div>
                           <div class="min-h-full min-w-full self-start">
-                              <h1 class="text-[#3d997c] text-[40px] leading-[40px] font-[500] text-center py-4">documents
+                              <h1 class="text-[#00647b] text-[40px] leading-[40px] font-[500] text-center py-4">documents
                                   obligatoires</h1>
 
                               <div class="flex items-center gap-4 pl-5">
@@ -104,7 +104,7 @@
                                   </div>
                                   <div class="form-control">
                                     <label class="label text-gray-600" for="passport-photo">photo du billet d'avion</label>
-                                    <input class="input input-bordered input-success bg-white text-gray-900" type="file">
+                                    <input class="input input-bordered input-[red] bg-white text-gray-900" type="file">
                                   </div>
                                   <div class="">
                                   </div>
@@ -115,14 +115,14 @@
                           <div class="flex items-center gap-4 justify-center h-full py-4">
                               @if (this.compteur() === 1) {
                               <div>
-                                  <div class="py-2 px-4 rounded-[80px] h-[45px] flex items-center justify-center cursor-pointer btn-wide bg-[#3d997c] text-white"
+                                  <div class="py-2 px-4 rounded-[80px] h-[45px] flex items-center justify-center cursor-pointer btn-wide bg-[#00647b] text-white"
                                       (click)="nextStep()">Suivant</div>
                               </div>
                               } @else {
                               <div class="flex items-center gap-4">
-                                  <div class="py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer btn-wide bg-[#3d997c] text-white"
+                                  <div class="py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer btn-wide bg-[#00647b] text-white"
                                       (click)="prevStep()">Précedent</div>
-                                  <div class=" py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer btn-wide bg-[#3d997c] text-white"
+                                  <div class=" py-2 px-4 rounded-[100px] h-[45px] flex items-center justify-center cursor-pointer btn-wide bg-[#00647b] text-white"
                                       (click)="nextStep() "  onclick="my_modal_1.showModal()">Payer ({{visaPlan.currentPlan.price}})</div>
                                       <dialog id="my_modal_1" class="modal">
                                         <div class="modal-box">
