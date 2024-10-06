@@ -21,19 +21,19 @@ export class VisaFormComponent {
       id: 1,
       label: 'E-visa de Court sejour',
       price: '233 €',
-      desc: 'Séjour maximun de 180 joursDurée de validité de 6 moisMultiple entrée \n Durée de traitement(4 jours)'
+      desc: 'Séjour allant de 1 a  180 jours Multiple entrée (obtenue en 4 jours ovrable)'
     },
     {
       id: 2,
-      label: 'E-visa  Express',
+      label: 'E-visa  Court sejour Express ',
       price: '345 €',
-      desc: 'Séjour maximun de 180 joursDurée de validité de 6 moisMultiple entrée \n Durée de traitement(2 jours)'
+      desc: 'obtenez votre visa en 48 heures Multiple entrée (obtenue en 2 jours ovrable)'
     },
     {
       id: 3,
       label: 'E-visa de  long sejour',
       price: '406 €',
-      desc: 'Séjour maximun de 180 joursDurée de validité de 6 moisMultiple entrée \n Durée de traitement(4 jours)'
+      desc: 'Séjour de 180 jours a 360 jours Multiple entrée (obtenue en 4 jours ovrable)'
     },
   ]
   compteur = signal(1)

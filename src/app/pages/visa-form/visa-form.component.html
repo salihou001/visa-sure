@@ -53,6 +53,18 @@
                                       <input class="input input-bordered input-success bg-white text-gray-900" type="email" placeholder="Entrez l'email du voyageur">
                                     </div>
                                   </div>
+                                  <div class="overflow-hidden">
+                                    <div class="form-control">
+                                      <label class="label text-gray-600" for="reason">numéro de telephone</label>
+                                      <input class="input input-bordered input-success bg-white text-gray-900" type="number" placeholder="Entrez l'email du voyageur">
+                                    </div>
+                                  </div>
+                                  <div class="overflow-hidden">
+                                    <div class="form-control">
+                                      <label class="label text-gray-600" for="reason">numéro d'une contact au pays</label>
+                                      <input class="input input-bordered input-success bg-white text-gray-900" type="number" placeholder="Entrez l'email du voyageur">
+                                    </div>
+                                  </div>
                               </div>
                               <h1 class="text-[#00647b] text-[30px] leading-[50px] font-[500] text-center py-2">
                                   Ajouter le voyageur</h1>
@@ -77,33 +89,34 @@
                                   obligatoires</h1>
 
                               <div class="flex items-center gap-4 pl-5">
-                                  <div class="font-[700] text-black">Etes-vous mineur ?</div>
-                                  <div><input type="radio" name="" id="" (click)="checkIfUserIsMinor($event)"></div>
+                                  <div class="font-[700] text-black">Etes-vous mineur ?</div><br>
+                                  <div><p>oui</p><input type="radio" name="" id="" (click)="checkIfUserIsMinor($event)"></div>
+                                  <div><p>non</p><input type="radio" name="" id="" (click)="checkIfUserIsMinor($event)"></div>
                               </div>
 
                               <div class="grid grid-cols-2 gap-4 h-full w-full p-4">
                                   @if (this.compteurRadio() === 2) {
                                     <div class="form-control">
-                                      <label class="label text-gray-600" for="passport-photo">photo de autorisation parental</label>
+                                      <label class="label text-gray-600" for="passport-photo">autorisation parental</label>
                                       <input class="input input-bordered input-success bg-white text-gray-900" type="file">
                                     </div>
                                   <div class="">
                                   </div>
                                   }
                                   <div class="form-control">
-                                    <label class="label text-gray-600" for="passport-photo">photo du passport ( photo de la premiere decouverture)</label>
+                                    <label class="label text-gray-600" for="passport-photo"> passport ( photo de la premiere decouverture)</label>
                                     <input class="input input-bordered input-success bg-white text-gray-900" type="file">
                                   </div>
                                   <div class="">
                                   </div>
                                   <div class="form-control">
-                                    <label class="label text-gray-600" for="passport-photo">photo du carnet de vaccination contre la fievre jaune</label>
+                                    <label class="label text-gray-600" for="passport-photo">carnet de vaccination contre la fievre jaune</label>
                                     <input class="input input-bordered input-success bg-white text-gray-900" type="file">
                                   </div>
                                   <div class="">
                                   </div>
                                   <div class="form-control">
-                                    <label class="label text-gray-600" for="passport-photo">photo du billet d'avion</label>
+                                    <label class="label text-gray-600" for="passport-photo"> billet d'avion</label>
                                     <input class="input input-bordered input-[red] bg-white text-gray-900" type="file">
                                   </div>
                                   <div class="">
