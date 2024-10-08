@@ -58,12 +58,21 @@ export class VisaFormComponent {
 
 
 
-  checkIfUserIsMinor(e: any) {
-    if(this.compteurRadio() === 1){
-      this.compteurRadio.set(2);
-    }else{
-      e.target.checked = false;
-      this.compteurRadio.set(1);
-    }
+  isMinor(e: any) {
+    this.resetInputRadio();
+    e.target.checked = true;
+    this.compteurRadio.set(2);
+  }
+  isNotMinor(e: any) {
+    this.resetInputRadio();
+    e.target.checked = true;
+    this.compteurRadio.set(1);
+  }
+
+  resetInputRadio() {
+    const result = document.querySelectorAll("input[type='radio']") as any;
+    result.forEach((element:HTMLInputElement) => {
+        element.checked = false;
+    });
   }
 }

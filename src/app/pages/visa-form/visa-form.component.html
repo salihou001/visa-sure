@@ -56,13 +56,13 @@
                                   <div class="overflow-hidden">
                                     <div class="form-control">
                                       <label class="label text-gray-600" for="reason">numéro de telephone</label>
-                                      <input class="input input-bordered input-success bg-white text-gray-900" type="number" placeholder="Entrez l'email du voyageur">
+                                      <input class="input input-bordered input-success bg-white text-gray-900" type="text" placeholder="Entrez l'email du voyageur">
                                     </div>
                                   </div>
                                   <div class="overflow-hidden">
                                     <div class="form-control">
                                       <label class="label text-gray-600" for="reason">numéro d'une contact au pays</label>
-                                      <input class="input input-bordered input-success bg-white text-gray-900" type="number" placeholder="Entrez l'email du voyageur">
+                                      <input class="input input-bordered input-success bg-white text-gray-900" type="text" placeholder="Entrez l'email du voyageur">
                                     </div>
                                   </div>
                               </div>
@@ -79,7 +79,7 @@
                                 </div>
 
                                 <div class="form-control">
-                                  <label class="label text-[red]" for="reason">NB:date d’expiration du passport (>= a 6mois a la date du jour)</label>
+                                  <label class="text-red">NB:date d’expiration du passport <br> (>= a 6mois a la date du jour)</label>
                                   <input class="input input-bordered input-success bg-gray-300 text-gray-900" type="date" placeholder="Entrez votre prenom">
                                 </div>
                               </div>
@@ -90,8 +90,8 @@
 
                               <div class="flex items-center gap-4 pl-5">
                                   <div class="font-[700] text-black">Etes-vous mineur ?</div><br>
-                                  <div><p>oui</p><input type="radio" name="" id="" (click)="checkIfUserIsMinor($event)"></div>
-                                  <div><p>non</p><input type="radio" name="" id="" (click)="checkIfUserIsMinor($event)"></div>
+                                  <div><p>oui</p><input  type="radio" name="" id="" (click)="isMinor($event)"></div>
+                                  <div><p>non</p><input  type="radio" name="" id="" (click)="isNotMinor($event)"></div>
                               </div>
 
                               <div class="grid grid-cols-2 gap-4 h-full w-full p-4">

@@ -20,8 +20,6 @@ export class AppComponent implements OnInit {
     if (typeof window !== 'undefined') {
       // votre code utilisant 'window'
       const lenis = new Lenis();
-      lenis.on('scroll', (e: any) => {
-      })
       lenis.on('scroll', ScrollTrigger.update)
       gsap.ticker.add((time) => {
         lenis.raf(time * 500)
