@@ -16,7 +16,13 @@ gsap.registerPlugin(ScrollTrigger);
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
+
   ngOnInit() {
+
+    // window.addEventListener('wheel', (event) => {
+    //   event.preventDefault(); // Empêche l'erreur
+    // }, { passive: false });
+    //
     if (typeof window !== 'undefined') {
       // votre code utilisant 'window'
       const lenis = new Lenis();
